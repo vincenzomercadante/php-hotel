@@ -32,12 +32,12 @@ require_once('./main.php');
                 <label class="form-check-label me-2" for="parking">Yes</label>
                 <input type="radio" name="parking-filter" id="parking" class="form-check-input" value="yes">
                 
-                <label class="form-check-label ms-3 me-2" for="parking">No</label>
+                <label class="form-check-label ms-3 me-2 " for="parking">No</label>
                 <input type="radio" name="parking-filter" id="parking" class="form-check-input" value="no" checked>
             </div>
 
             <!-- hotel vote filter -->
-            <label class="form-check-label fs-3 mt-3" for="vote">With Vote:</label>
+            <label class="form-check-label fs-3 mt-3 fw-semibold" for="vote">With Vote:</label>
             <select name="vote" id="vote" class="form-select">
                 <option value="1">1</option>
                 <option value="2">2</option>
