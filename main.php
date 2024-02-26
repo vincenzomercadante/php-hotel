@@ -49,11 +49,24 @@
     // filtering the hotels array
     if($form_sent){
         // checkbox input value variable
-        $parking_filter = $_GET['parking-filter'];
+        $parking_filter = ($_GET['parking-filter']=='yes') ? true : false;
+
+        var_dump($parking_filter);
+
+        // hotel vote filter
+        $hotel_vote = (int) $_GET['vote'];
+
+
         // checkbox input value variable
         foreach($hotels as $hotel){
-            if($hotel['parking']){
-                $filtered_hotels [] = $hotel;
+            if($parking_filter){
+                if($hotel['parking'] == $parking_filter && $hotel['vote'] >= $hotel_vote){
+                    $filtered_hotels [] = $hotel;
+                }
+            } else {
+                if($hotel['vote'] >= $hotel_vote){
+                    $filtered_hotels [] = $hotel;
+                }
             }
         }
     }

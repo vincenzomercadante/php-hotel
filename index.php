@@ -25,9 +25,28 @@ require_once('./main.php');
         <!-- page title -->
         <h1 class="text-center text-success display-3 my-5">HOTEL BOL VA GO</h1>
 
-        <form method="GET" class="container d-flex flex-column align-items-start">
-            <label class="form-check-label fs-3" for="parking">With Parking Area:</label>
-            <input type="checkbox" name="parking-filter" id="parking" class="form-check-input">
+        <form method="GET" class="container d-flex flex-column align-items-center">
+            <h2>With Parking Area?</h2>
+            <!-- parking area input -->
+            <div class="d-flex">
+                <label class="form-check-label me-2" for="parking">Yes</label>
+                <input type="radio" name="parking-filter" id="parking" class="form-check-input" value="yes">
+                
+                <label class="form-check-label ms-3 me-2" for="parking">No</label>
+                <input type="radio" name="parking-filter" id="parking" class="form-check-input" value="no" checked>
+            </div>
+
+            <!-- hotel vote filter -->
+            <label class="form-check-label fs-3 mt-3" for="vote">With Vote:</label>
+            <select name="vote" id="vote" class="form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+            <!-- submit -->
             <input type="submit" name="" id="" class="btn btn-primary mt-3" value="SUBMIT">
         </form>
 
