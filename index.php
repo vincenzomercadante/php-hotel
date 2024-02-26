@@ -24,6 +24,14 @@ require_once('./main.php');
     <body class="d-flex justify-content-center flex-column px-3">
         <!-- page title -->
         <h1 class="text-center text-success display-3 my-5">HOTEL BOL VA GO</h1>
+
+        <form method="GET" class="container d-flex flex-column align-items-start">
+            <label class="form-check-label fs-3" for="parking">With Parking Area:</label>
+            <input type="checkbox" name="parking-filter" id="parking" class="form-check-input">
+            <input type="submit" name="" id="" class="btn btn-primary mt-3" value="SUBMIT">
+        </form>
+
+        <hr/>
         <table class="table table-hover table-dark">
             <theader>
                 <!-- table header -->
@@ -37,7 +45,7 @@ require_once('./main.php');
             </theader>
             <tbody>
                 <!-- hotel info printer -->
-                <?php foreach($hotels as $hotel): ?>
+                <?php foreach($filtered_hotels as $hotel): ?>
                 <tr>
                     <td><?= $hotel['name'] ?></td>
                     <td><?= $hotel['description'] ?></td>

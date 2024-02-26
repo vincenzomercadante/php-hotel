@@ -40,4 +40,22 @@
         ],
     ];
 
+    // form submit check
+    $form_sent = !empty($_GET);
+
+    // filtered array
+    $filtered_hotels = ($form_sent) ? [] : $hotels; 
+
+    // filtering the hotels array
+    if($form_sent){
+        // checkbox input value variable
+        $parking_filter = $_GET['parking-filter'];
+        // checkbox input value variable
+        foreach($hotels as $hotel){
+            if($hotel['parking']){
+                $filtered_hotels [] = $hotel;
+            }
+        }
+    }
+
 ?>
